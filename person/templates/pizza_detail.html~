@@ -1,0 +1,28 @@
+<h2>{{ pizza.name }}</h2>
+Toppings
+<ul>
+    {% for topping in pizza.toppings.all %}
+        <li>{{ topping.name }}</li>
+    {% endfor %}
+</ul>
+
+<form method="post">
+    {% csrf_token %}
+    <label>first name</label>
+    <input name="first_name" />
+    <label>last name</label>
+    <input name="last_name" />
+    <label>age</label>
+    <input name="age" />
+    <button type="submit">Submit</button>
+</form>
+
+<form method="post">
+{% csrf_token %}
+{{ form.as_p }}
+<button type="submit">Submit</button>
+</p>
+
+{% for x in test %}
+   {{ x }}{% if forloop.last %}{% else %}, {% endfor %}
+{% endfor %}

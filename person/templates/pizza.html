@@ -1,0 +1,16 @@
+<ul>
+    {% for pizza in pizzas %}
+       <li>
+           <a href="{% url 'pizza_detail' pizza.id %}">{{ pizza.name }}</a>
+           <h4>Toppings</h4>
+           <ol>
+               {% for topping in pizza.toppings.all %}
+                   <li>
+                       {{ topping.name }}
+                   </li>
+               {% endfor %}
+           </ol>
+       </li>
+    {% endfor %}
+</ul>
+
